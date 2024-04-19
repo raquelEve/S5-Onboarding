@@ -1,0 +1,29 @@
+.card {
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 8px 10px 6px -6px #777;
+}
+.card-header {
+  padding: 120px 40px;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.card-image {
+  display: block;
+  width: 100%;
+}
+.card-body{
+    padding: 20px;
+}
+.card-title{
+    font-size: 1.2em;
+}
+
+/***** MEDIAS */
+@media (min-width: 400px) {
+    .card{
+        max-width: 380px;
+    }
+}
