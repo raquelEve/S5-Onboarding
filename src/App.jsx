@@ -26,15 +26,30 @@ function App() {
   const [step, setStep] = useState(0);
   const currentCardData = tutorialData[step];
   const nextStep = () => {
-
     if (step < tutorialData.length - 1) {
       setStep(step + 1);
     }
   }
-  // const imagen =require(`../assets/${imagen}.png`).default;
+  const prevStep = () => {
+    if (step > 0) {
+      setStep(step - 1);
+    }
+  }
+  const isTheLast = () => {
+    if (step == tutorialData.length - 1) {
+      return true;
+    }
+    return false;
+  }
+  const isTheFirst = () => {
+    if (step == 0) {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
-      <Card currentCardData={currentCardData} nextStep={nextStep}></Card>
+      <Card currentCardData={currentCardData} nextStep={nextStep} prevStep={prevStep} isTheLast={isTheLast} isTheFirst={isTheFirst}></Card>
     </>
   )
 }
