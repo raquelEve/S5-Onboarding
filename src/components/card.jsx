@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 
 import './card.css'
 
-const Card = ({ currentCardData }) => {
+const Card = ({ currentCardData, nextStep }) => {
 
     return (
         <div className='card'>
             <h1>{currentCardData.title}</h1>
             <p>{currentCardData.description}</p>
+            <div className='button-box'>
+                <button onClick={nextStep}>+</button>
+            </div>
         </div>
     );
 };
@@ -19,6 +22,7 @@ Card.propTypes = {
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
     }),
+    nextStep: PropTypes.func
 };
 
 

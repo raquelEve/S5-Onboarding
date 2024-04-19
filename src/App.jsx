@@ -24,9 +24,16 @@ function App() {
 
   const [step, setStep] = useState(0);
   const currentCardData = tutorialData[step];
+  const nextStep = () => {
+
+    if (step < tutorialData.length - 1) {
+      setStep(step + 1);
+    }
+  }
   return (
     <>
-      <Card currentCardData={currentCardData}></Card>
+      <Card currentCardData={currentCardData} nextStep={nextStep}></Card>
+      <p>{step}</p>
     </>
   )
 }
